@@ -5,6 +5,7 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_m3004")
+is_counting = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(605, 252)

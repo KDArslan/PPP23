@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://5odq58vkilpd"]
+
+[ext_resource type="PackedScene" uid="uid://bh4kto2758end" path="res://scenes/avatar.tscn" id="1_lbbmi"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Avatar" parent="." instance=ExtResource("1_lbbmi")]
