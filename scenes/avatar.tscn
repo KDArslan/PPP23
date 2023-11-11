@@ -3,9 +3,8 @@
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="2_ju0pl"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hn8ye"]
-radius = 60.0
-height = 122.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ksd"]
+size = Vector2(118, 118)
 
 [node name="Avatar" type="CharacterBody2D"]
 script = ExtResource("1_unvk1")
@@ -17,4 +16,4 @@ texture = ExtResource("2_ju0pl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(82, 80)
-shape = SubResource("CapsuleShape2D_hn8ye")
+shape = SubResource("RectangleShape2D_n0ksd")
