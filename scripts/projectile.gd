@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 class_name Projectile
 
 @export var speed : float = 500
@@ -10,3 +10,13 @@ func _physics_process(delta):
 func _initialize(speed : float, direction : Vector2):
 	self.speed = speed
 	self.direction = direction.normalized()
+
+func _on_screen_exited():
+	queue_free()
+
+func _on_body_entered(body):
+	if body.has_method("take_hit"):
+		body.take_hit()
+	if body.is_in_group("hittable"):
+		queue_free()
+		

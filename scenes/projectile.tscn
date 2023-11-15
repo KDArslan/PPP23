@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmxnhibsoli0g"]
+[gd_scene load_steps=4 format=3 uid="uid://bmxnhibsoli0g"]
 
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="1_81xvm"]
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_bif3m"]
 
-[node name="Projectile" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_eu2tk"]
+radius = 12.0
+
+[node name="Projectile" type="Area2D"]
 script = ExtResource("1_bif3m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0.811765, 0.192157, 1)
 scale = Vector2(0.175781, 0.183594)
 texture = ExtResource("1_81xvm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(1.6471, 1.44523)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eu2tk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
