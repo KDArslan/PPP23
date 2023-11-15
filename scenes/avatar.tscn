@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh4kto2758end"]
+[gd_scene load_steps=5 format=3 uid="uid://bh4kto2758end"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="2_ju0pl"]
+[ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ksd"]
 size = Vector2(118, 118)
@@ -11,9 +12,9 @@ script = ExtResource("1_unvk1")
 speed = 300.0
 
 [node name="Visuals" type="Sprite2D" parent="."]
-position = Vector2(82, 80)
 texture = ExtResource("2_ju0pl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(82, 80)
 shape = SubResource("RectangleShape2D_n0ksd")
+
+[node name="Weapon" parent="." instance=ExtResource("3_uh6k7")]

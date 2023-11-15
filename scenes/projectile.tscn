@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmxnhibsoli0g"]
+
+[ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="1_81xvm"]
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_bif3m"]
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_bif3m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0.811765, 0.192157, 1)
+scale = Vector2(0.175781, 0.183594)
+texture = ExtResource("1_81xvm")
