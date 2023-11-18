@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ksd"]
 size = Vector2(118, 118)
 
-[node name="Avatar" type="CharacterBody2D"]
+[node name="Avatar" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_unvk1")
 speed = 300.0
 
@@ -18,3 +18,5 @@ texture = ExtResource("2_ju0pl")
 shape = SubResource("RectangleShape2D_n0ksd")
 
 [node name="Weapon" parent="." instance=ExtResource("3_uh6k7")]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
