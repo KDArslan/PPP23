@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7c2vxevwj3n6"]
 
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="1_eufta"]
-[ext_resource type="Script" path="res://enemy.gd" id="1_uwllk"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_r3vu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gg6kx"]
 size = Vector2(117, 116)
 
 [node name="Enemy" type="CharacterBody2D" groups=["hittable"]]
-script = ExtResource("1_uwllk")
+script = ExtResource("1_r3vu0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0, 0.254902, 1)

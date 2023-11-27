@@ -9,13 +9,16 @@
 [node name="Avatar" parent="." instance=ExtResource("1_lbbmi")]
 
 [node name="Obstacle" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(532, 280)
+position = Vector2(499, 210)
 
 [node name="Obstacle2" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(281, 276)
-
-[node name="Obstacle3" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(688, 143)
+position = Vector2(499, 77)
 
 [node name="Enemy" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(413, 489)
+position = Vector2(496, 423)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(723, 159)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(966, 83)
