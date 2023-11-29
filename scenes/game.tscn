@@ -14,11 +14,11 @@ position = Vector2(499, 210)
 [node name="Obstacle2" parent="." instance=ExtResource("2_cj7jx")]
 position = Vector2(499, 77)
 
-[node name="Enemy" parent="." instance=ExtResource("3_1727g")]
+[node name="Enemy" parent="." groups=["enemy"] instance=ExtResource("3_1727g")]
 position = Vector2(496, 423)
 
-[node name="Enemy2" parent="." instance=ExtResource("3_1727g")]
+[node name="Enemy2" parent="." groups=["enemy"] instance=ExtResource("3_1727g")]
 position = Vector2(723, 159)
 
-[node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
+[node name="Enemy3" parent="." groups=["enemy"] instance=ExtResource("3_1727g")]
 position = Vector2(966, 83)

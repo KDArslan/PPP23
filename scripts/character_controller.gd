@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Avatar
 
 @export var speed : float = 100.0
 
@@ -9,5 +10,5 @@ func _physics_process(delta):
 	for index in get_slide_collision_count():
 		var collision := get_slide_collision(index)
 		var body := collision.get_collider()
-		if body.name == "Enemy":
+		if body.is_in_group("enemy"):
 			queue_free()
