@@ -7,18 +7,21 @@
 [node name="Game" type="Node2D"]
 
 [node name="Avatar" parent="." instance=ExtResource("1_lbbmi")]
+position = Vector2(167, 188)
 
 [node name="Obstacle" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(499, 210)
+position = Vector2(694, 362)
+scale = Vector2(5.22716, 0.531776)
 
 [node name="Obstacle2" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(499, 77)
+position = Vector2(318, 361)
+scale = Vector2(1, 2.32)
 
-[node name="Enemy" parent="." groups=["enemy"] instance=ExtResource("3_1727g")]
-position = Vector2(496, 423)
+[node name="Enemy" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(604, 523)
 
-[node name="Enemy2" parent="." groups=["enemy"] instance=ExtResource("3_1727g")]
-position = Vector2(723, 159)
+[node name="Enemy2" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(605, 161)
 
-[node name="Enemy3" parent="." groups=["enemy"] instance=ExtResource("3_1727g")]
-position = Vector2(966, 83)
+[node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(984, 318)

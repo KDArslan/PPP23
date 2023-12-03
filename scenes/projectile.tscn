@@ -4,18 +4,18 @@
 [ext_resource type="Script" path="res://scripts/projectile.gd" id="1_bif3m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eu2tk"]
-radius = 12.0
+radius = 9.0
 
 [node name="Projectile" type="Area2D"]
 script = ExtResource("1_bif3m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0.811765, 0.192157, 1)
-scale = Vector2(0.175781, 0.183594)
+scale = Vector2(0.126953, 0.123047)
 texture = ExtResource("1_81xvm")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-scale = Vector2(1.6471, 1.44523)
+scale = Vector2(0.986775, 0.961307)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eu2tk")

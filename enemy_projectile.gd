@@ -15,8 +15,10 @@ func _on_screen_exited():
 	queue_free()
 
 func _on_body_entered(body):
-	if body.has_method("take_hit"):
-		body.take_hit()
 	if body.is_in_group("player"):
 		queue_free()
-		
+		if body.has_method("take_hit"):
+			body.take_hit()
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	pass # Replace with function body.

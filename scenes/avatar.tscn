@@ -5,13 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ksd"]
-size = Vector2(118, 118)
+size = Vector2(59.5, 57.5)
 
 [node name="Avatar" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_unvk1")
 speed = 300.0
 
 [node name="Visuals" type="Sprite2D" parent="."]
+scale = Vector2(0.53125, 0.511719)
 texture = ExtResource("2_ju0pl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

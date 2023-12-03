@@ -5,18 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://0ssif2gymerd" path="res://scenes/enemy_weapon.tscn" id="3_tpxu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gg6kx"]
-size = Vector2(117, 116)
+size = Vector2(73.5, 65.5)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy", "hittable"]]
 script = ExtResource("1_r3vu0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0, 0.254902, 1)
+scale = Vector2(0.59375, 0.546875)
 texture = ExtResource("1_eufta")
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_gg6kx")
 
 [node name="EnemyWeapon" parent="." instance=ExtResource("3_tpxu5")]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

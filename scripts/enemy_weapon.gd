@@ -2,7 +2,7 @@ extends Node2D
 
 @export var enemy_projectile_scene : PackedScene
 @export var projectile_speed : float = 500.0
-@export var projectile_firerate : float = 5
+@export var projectile_firerate : float = 3
 var aim_direction : Vector2 = Vector2.RIGHT 
 @onready var firerate_timer : Timer = $Timer
 @export var attack_distance : float = 300
@@ -19,11 +19,10 @@ func _physics_process(delta):
 			else:
 				firerate_timer.wait_time = 0
 			#Node aus PackedScene erzeugen 
-			var projectile = enemy_projectile_scene.instantiate()
-			get_tree().root.add_child(projectile)
-			projectile.position = global_position
+			var enemy_projectile = enemy_projectile_scene.instantiate()
+			get_tree().root.add_child(enemy_projectile)
+			enemy_projectile.position = global_position
 			#setzten der Richtung und der Geschwindigkeit der Projektile
-			projectile._initialize(projectile_speed, enemy_direction)
+			enemy_projectile._initialize(projectile_speed, enemy_direction)
 			#Reset Timer
 			firerate_timer.start()
-

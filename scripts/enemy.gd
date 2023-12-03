@@ -1,8 +1,8 @@
 extends CharacterBody2D #CharacterBody statt StaticBody, da movement in Zukunft kommen soll
 
-var hit_count = 0
-@export var speed : float = 100.0
-@export var attack_distance : float = 300
+var hit_points = 3
+@export var speed : float = 70.0
+@export var attack_distance : float = 400
 var enemy_direction : Vector2
 var player : CharacterBody2D
 
@@ -19,6 +19,6 @@ func _physics_process(delta):
 
 func take_hit():
 	print("argh")
-	hit_count += 1
-	if hit_count == 3:
+	hit_points -= 1
+	if hit_points == 0:
 		queue_free()

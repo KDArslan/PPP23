@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Avatar
 
 @export var speed : float = 100.0
-var hit_count = 0
+var hit_points = 5
 
 func _physics_process(delta):
 	var input_value = Input.get_vector("left", "right", "up", "down")
@@ -16,6 +16,6 @@ func _physics_process(delta):
 
 func take_hit():
 	print("Auaa")
-	hit_count += 1
-	if hit_count == 3:
+	hit_points -= 1
+	if hit_points == 0:
 		queue_free()
