@@ -1,5 +1,5 @@
 extends Area2D
-class_name Projectile
+#class_name EnemyProjectile
 
 @export var speed : float = 500
 @export var direction : Vector2 = Vector2.RIGHT
@@ -15,9 +15,8 @@ func _on_screen_exited():
 	queue_free()
 
 func _on_body_entered(body):
-	if not body.is_in_group("player"):
-		if body.has_method("take_hit"):
-			body.take_hit()
-		if body.is_in_group("hittable"):
-			queue_free()
+	if body.has_method("take_hit"):
+		body.take_hit()
+	if body.is_in_group("player"):
+		queue_free()
 		

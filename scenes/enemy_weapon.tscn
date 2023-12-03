@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ssif2gymerd"]
+
+[ext_resource type="Script" path="res://scripts/enemy_weapon.gd" id="1_oqqjp"]
+[ext_resource type="PackedScene" uid="uid://j84io0yin7pq" path="res://scenes/enemy_projectile.tscn" id="2_imr4q"]
+
+[node name="EnemyWeapon" type="Node2D"]
+script = ExtResource("1_oqqjp")
+enemy_projectile_scene = ExtResource("2_imr4q")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

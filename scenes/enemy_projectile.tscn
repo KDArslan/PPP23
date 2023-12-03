@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://j84io0yin7pq"]
+
+[ext_resource type="Script" path="res://enemy_projectile.gd" id="1_ld6mu"]
+[ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="1_waxs7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nltl8"]
+
+[node name="EnemyProjectile" type="Area2D"]
+script = ExtResource("1_ld6mu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0470588, 0, 0.219608, 1)
+scale = Vector2(0.0917969, 0.0976563)
+texture = ExtResource("1_waxs7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.555, 0.555)
+shape = SubResource("CircleShape2D_nltl8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.485, 0.485)

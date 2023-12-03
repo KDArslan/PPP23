@@ -17,7 +17,6 @@ func _physics_process(delta):
 		get_tree().root.add_child(projectile)
 		projectile.position = global_position
 		#setzten der Richtung und der Geschwindigkeit der Projektile
-		projectile = projectile as Projectile
 		projectile._initialize(projectile_speed, aim_direction)
 		#Reset Timer
 		firerate_timer.start()
