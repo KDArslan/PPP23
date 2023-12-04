@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var enemy_projectile_scene : PackedScene
-@export var projectile_speed : float = 500.0
-@export var projectile_firerate : float = 3
+@export var projectile_speed : float = 200.0
+@export var projectile_firerate : float = 1
 var aim_direction : Vector2 = Vector2.RIGHT 
 @onready var firerate_timer : Timer = $Timer
 @export var attack_distance : float = 300
