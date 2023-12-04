@@ -9,7 +9,7 @@ _data = {
 }
 point_count = 4
 
-[node name="Path2D" type="Path2D"]
+[node name="EnemySpawnPath" type="Path2D"]
 curve = SubResource("Curve2D_vhyrr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

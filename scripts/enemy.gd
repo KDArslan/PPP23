@@ -16,7 +16,6 @@ func _physics_process(delta):
 		velocity = enemy_direction * speed
 		move_and_slide()
 
-
 func take_hit():
 	print("argh")
 	hit_points -= 1

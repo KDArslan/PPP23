@@ -15,7 +15,7 @@ func _on_screen_exited():
 	queue_free()
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("obstacle"):
 		queue_free()
 		if body.has_method("take_hit"):
 			body.take_hit()

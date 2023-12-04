@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbnw70ayk52pg"]
+
+[ext_resource type="Script" path="res://scripts/enemy_spawn_path.gd" id="1_ftv80"]
+[ext_resource type="PackedScene" uid="uid://b7c2vxevwj3n6" path="res://scenes/enemy.tscn" id="2_h5n3q"]
+
+[sub_resource type="Curve2D" id="Curve2D_vhyrr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -120, -74, 0, 0, 0, 0, -120, -75, 0, 0, 0, 0, 1300, -75, 0, 0, 0, 0, 1300, 750, 0, 0, 0, 0, -120, 750, 0, 0, 0, 0, -120, -74)
+}
+point_count = 6
+
+[node name="EnemySpawnPath" type="Path2D"]
+curve = SubResource("Curve2D_vhyrr")
+script = ExtResource("1_ftv80")
+enemy_scene = ExtResource("2_h5n3q")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
