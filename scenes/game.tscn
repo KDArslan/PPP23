@@ -12,6 +12,13 @@
 [node name="Avatar" parent="." instance=ExtResource("1_lbbmi")]
 position = Vector2(167, 188)
 
+[node name="Camera2D" type="Camera2D" parent="Avatar"]
+limit_left = -1200
+limit_top = -1200
+limit_right = 1200
+limit_bottom = 1200
+editor_draw_limits = true
+
 [node name="Obstacle" parent="." instance=ExtResource("2_cj7jx")]
 position = Vector2(694, 362)
 scale = Vector2(5.22716, 0.531776)
