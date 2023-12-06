@@ -7,9 +7,8 @@ var aim_direction : Vector2 = Vector2.RIGHT
 @onready var firerate_timer : Timer = $Timer
 @export var attack_distance : float = 300
 var enemy_direction : Vector2
-var player : CharacterBody2D
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var player = get_tree().get_first_node_in_group("player")
 	if(is_instance_valid(player)):
 		enemy_direction = player.global_position - global_position

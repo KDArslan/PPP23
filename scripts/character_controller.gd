@@ -4,7 +4,7 @@ class_name Avatar
 @export var speed : float = 100.0
 var hit_points = 5
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var input_value = Input.get_vector("left", "right", "up", "down")
 	velocity = input_value * speed
 	move_and_slide()

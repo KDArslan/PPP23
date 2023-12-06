@@ -4,9 +4,8 @@ var hit_points = 3
 @export var speed : float = 70.0
 @export var attack_distance : float = 300
 var enemy_direction : Vector2
-var player : CharacterBody2D
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var player = get_tree().get_first_node_in_group("player")
 	player = player as Node2D
 	if(is_instance_valid(player)):

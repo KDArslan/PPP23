@@ -6,7 +6,7 @@ extends Node2D
 var aim_direction : Vector2 = Vector2.RIGHT 
 @onready var firerate_timer : Timer = $Timer
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("shoot") and firerate_timer.is_stopped(): 
 		if projectile_firerate > 0:
 			firerate_timer.wait_time = 1/projectile_firerate
