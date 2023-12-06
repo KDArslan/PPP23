@@ -18,6 +18,7 @@ func _on_body_entered(body):
 	if not body.is_in_group("player"):
 		if body.has_method("take_hit"):
 			body.take_hit()
+			queue_free()
 		if body.is_in_group("obstacle"):
 			queue_free()
 		

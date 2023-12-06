@@ -10,7 +10,7 @@ func _physics_process(delta):
 	var player = get_tree().get_first_node_in_group("player")
 	player = player as Node2D
 	if(is_instance_valid(player)):
-		enemy_direction = player.global_position - global_position
+		enemy_direction = player.global_position - global_position #can replace with distance function
 	if enemy_direction.length() > attack_distance:
 		enemy_direction = enemy_direction.normalized()
 		velocity = enemy_direction * speed
