@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bh4kto2758end"]
+[gd_scene load_steps=6 format=3 uid="uid://bh4kto2758end"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="2_ju0pl"]
 [ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="4_ialuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ksd"]
 size = Vector2(59.5, 57.5)
@@ -20,4 +21,17 @@ shape = SubResource("RectangleShape2D_n0ksd")
 
 [node name="Weapon" parent="." instance=ExtResource("3_uh6k7")]
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_top = -41.0
+offset_right = 22.0
+offset_bottom = -35.0
+grow_horizontal = 2
+show_percentage = false
+script = ExtResource("4_ialuy")
+
+[connection signal="health_changed" from="." to="HealthBar" method="_on_avatar_health_changed"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
