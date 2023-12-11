@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxfaff7hk10ok"]
+
+[ext_resource type="Texture2D" uid="uid://ilacrixnf85f" path="res://1x1_#FFFFFFFF.png" id="1_y200l"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i8rfs"]
+distance = -1000.0
+
+[node name="LevelLimits" type="StaticBody2D"]
+
+[node name="LevelBottom" type="CollisionShape2D" parent="."]
+position = Vector2(0, 500)
+scale = Vector2(15, 1)
+shape = SubResource("WorldBoundaryShape2D_i8rfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelBottom"]
+position = Vector2(0, 1000)
+rotation = 3.14159
+scale = Vector2(200, -20)
+texture = ExtResource("1_y200l")
+
+[node name="LevelTop" type="CollisionShape2D" parent="."]
+position = Vector2(0, -500)
+rotation = 3.14159
+scale = Vector2(15, 1)
+shape = SubResource("WorldBoundaryShape2D_i8rfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelTop"]
+position = Vector2(0, 1000)
+rotation = 3.14159
+scale = Vector2(200, -20)
+texture = ExtResource("1_y200l")
+
+[node name="LevelLeft" type="CollisionShape2D" parent="."]
+position = Vector2(-500, 0)
+rotation = 1.5708
+scale = Vector2(15, 1)
+shape = SubResource("WorldBoundaryShape2D_i8rfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelLeft"]
+position = Vector2(0, 1000)
+rotation = 3.14159
+scale = Vector2(200, -20)
+texture = ExtResource("1_y200l")
+
+[node name="Level Right" type="CollisionShape2D" parent="."]
+position = Vector2(500, 0)
+rotation = -1.5708
+scale = Vector2(15, 1)
+shape = SubResource("WorldBoundaryShape2D_i8rfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Level Right"]
+position = Vector2(0, 1000)
+rotation = 3.14159
+scale = Vector2(200, -20)
+texture = ExtResource("1_y200l")

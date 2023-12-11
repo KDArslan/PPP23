@@ -1,37 +1,40 @@
-[gd_scene load_steps=5 format=3 uid="uid://5odq58vkilpd"]
+[gd_scene load_steps=6 format=3 uid="uid://5odq58vkilpd"]
 
 [ext_resource type="PackedScene" uid="uid://cbnw70ayk52pg" path="res://scenes/enemy_spawn_path.tscn" id="1_etdds"]
 [ext_resource type="PackedScene" uid="uid://bh4kto2758end" path="res://scenes/avatar.tscn" id="1_lbbmi"]
 [ext_resource type="PackedScene" uid="uid://dtq4wwxfb7tq4" path="res://scenes/obstacle.tscn" id="2_cj7jx"]
 [ext_resource type="PackedScene" uid="uid://b7c2vxevwj3n6" path="res://scenes/enemy.tscn" id="3_1727g"]
+[ext_resource type="PackedScene" uid="uid://dxfaff7hk10ok" path="res://scenes/level_limits.tscn" id="5_3kays"]
 
 [node name="Game" type="Node2D"]
 
-[node name="EnemySpawnPath" parent="." instance=ExtResource("1_etdds")]
+[node name="LevelLimits" parent="." instance=ExtResource("5_3kays")]
 
 [node name="Avatar" parent="." instance=ExtResource("1_lbbmi")]
-position = Vector2(167, 188)
 
 [node name="Camera2D" type="Camera2D" parent="Avatar"]
-limit_left = -1200
-limit_top = -1200
-limit_right = 1200
-limit_bottom = 1200
+limit_left = -1900
+limit_top = -1900
+limit_right = 1900
+limit_bottom = 1900
 editor_draw_limits = true
 
+[node name="EnemySpawnPath" parent="Avatar/Camera2D" instance=ExtResource("1_etdds")]
+
 [node name="Obstacle" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(694, 362)
+position = Vector2(-353, 376)
+rotation = 0.806342
 scale = Vector2(5.22716, 0.531776)
 
-[node name="Obstacle2" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(318, 361)
-scale = Vector2(1, 2.32)
+[node name="Obstacle6" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(187, 574)
+scale = Vector2(5.685, 0.39)
 
 [node name="Enemy" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(604, 523)
+position = Vector2(-560, 407)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(605, 161)
+position = Vector2(655, 80)
 
 [node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(984, 318)
+position = Vector2(-644, -322)

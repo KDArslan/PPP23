@@ -1,6 +1,6 @@
 extends CharacterBody2D #CharacterBody statt StaticBody, da movement in Zukunft kommen soll
 
-var hit_points = 3
+@export var hit_points = 3
 @export var speed : float = 70.0
 @export var attack_distance : float = 300
 var enemy_direction : Vector2

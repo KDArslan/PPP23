@@ -5,16 +5,15 @@
 
 [sub_resource type="Curve2D" id="Curve2D_vhyrr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -120, -74, 0, 0, 0, 0, -120, -75, 0, 0, 0, 0, 1300, -75, 0, 0, 0, 0, 1300, 750, 0, 0, 0, 0, -120, 750, 0, 0, 0, 0, -120, -74)
+"points": PackedVector2Array(0, 0, 0, 0, -800, -500, 0, 0, 0, 0, 800, -500, 0, 0, 0, 0, 800, 500, 0, 0, 0, 0, -800, 500, 0, 0, 0, 0, -800, -500)
 }
-point_count = 6
+point_count = 5
 
 [node name="EnemySpawnPath" type="Path2D"]
 curve = SubResource("Curve2D_vhyrr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-120, -74)
-rotation = -1.5708
+position = Vector2(-800, -500)
 script = ExtResource("1_ftv80")
 enemy_scene = ExtResource("2_h5n3q")
 

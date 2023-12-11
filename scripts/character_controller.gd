@@ -15,11 +15,11 @@ func _physics_process(_delta):
 	velocity = input_value * speed
 	move_and_slide()
 	#death on enemy collision
-#	for index in get_slide_collision_count():
-#		var collision := get_slide_collision(index)
-#		var body := collision.get_collider()
-#		if body.is_in_group("enemy"):
-#			queue_free()
+	for index in get_slide_collision_count():
+		var collision := get_slide_collision(index)
+		var body := collision.get_collider()
+		if body.is_in_group("enemy"):
+			queue_free()
 
 func take_hit():
 	print("Auaa")
