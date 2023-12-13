@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bh4kto2758end" path="res://scenes/avatar.tscn" id="1_lbbmi"]
 [ext_resource type="PackedScene" uid="uid://dtq4wwxfb7tq4" path="res://scenes/obstacle.tscn" id="2_cj7jx"]
 [ext_resource type="PackedScene" uid="uid://b7c2vxevwj3n6" path="res://scenes/enemy.tscn" id="3_1727g"]
-[ext_resource type="PackedScene" uid="uid://bs22cltei3qk" path="res://scenes/hud.tscn" id="4_peu8o"]
 [ext_resource type="PackedScene" uid="uid://bqngedfkafuuv" path="res://scenes/level_limits.tscn" id="5_3kays"]
+[ext_resource type="PackedScene" uid="uid://bk3hy7kqth31s" path="res://scenes/timer.tscn" id="7_vo2ix"]
 
 [node name="Game" type="Node2D"]
 
@@ -42,4 +42,8 @@ position = Vector2(-644, -322)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("4_peu8o")]
+[node name="TimerHUD" parent="CanvasLayer" instance=ExtResource("7_vo2ix")]
+current_time = 5.0
+
+[node name="GameTimer" type="Timer" parent="."]
+one_shot = true

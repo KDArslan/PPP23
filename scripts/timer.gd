@@ -1,7 +1,7 @@
 extends Control
 
-@onready var game_timer : Timer = $Timer
-@onready var timer_label : Label = $"VBoxContainer/TimerLabel"
+@onready var game_timer : Timer = $"../../GameTimer"
+@onready var timer_label : Label = $VBoxContainer/TimerLabel
 @export var current_time = 5.0
 
 

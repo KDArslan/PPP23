@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7c2vxevwj3n6"]
+[gd_scene load_steps=6 format=3 uid="uid://b7c2vxevwj3n6"]
 
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="1_eufta"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_r3vu0"]
+[ext_resource type="PackedScene" uid="uid://bk3hy7kqth31s" path="res://scenes/timer.tscn" id="2_0g2t2"]
 [ext_resource type="PackedScene" uid="uid://0ssif2gymerd" path="res://scenes/enemy_weapon.tscn" id="3_tpxu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gg6kx"]
@@ -9,6 +10,7 @@ size = Vector2(73.5, 65.5)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_r3vu0")
+HUD = ExtResource("2_0g2t2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0, 0.254902, 1)
