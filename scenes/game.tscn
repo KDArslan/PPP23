@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://5odq58vkilpd"]
+[gd_scene load_steps=7 format=3 uid="uid://5odq58vkilpd"]
 
 [ext_resource type="PackedScene" uid="uid://cbnw70ayk52pg" path="res://scenes/enemy_spawn_path.tscn" id="1_etdds"]
 [ext_resource type="PackedScene" uid="uid://bh4kto2758end" path="res://scenes/avatar.tscn" id="1_lbbmi"]
 [ext_resource type="PackedScene" uid="uid://dtq4wwxfb7tq4" path="res://scenes/obstacle.tscn" id="2_cj7jx"]
 [ext_resource type="PackedScene" uid="uid://b7c2vxevwj3n6" path="res://scenes/enemy.tscn" id="3_1727g"]
-[ext_resource type="PackedScene" uid="uid://dxfaff7hk10ok" path="res://scenes/level_limits.tscn" id="5_3kays"]
+[ext_resource type="PackedScene" uid="uid://bs22cltei3qk" path="res://scenes/hud.tscn" id="4_peu8o"]
+[ext_resource type="PackedScene" uid="uid://bqngedfkafuuv" path="res://scenes/level_limits.tscn" id="5_3kays"]
 
 [node name="Game" type="Node2D"]
 
@@ -38,3 +39,7 @@ position = Vector2(655, 80)
 
 [node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
 position = Vector2(-644, -322)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("4_peu8o")]

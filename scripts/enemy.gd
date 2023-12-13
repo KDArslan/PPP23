@@ -16,7 +16,7 @@ func _physics_process(_delta):
 		move_and_slide()
 
 func take_hit():
-	print("argh")
+	#print("argh")
 	hit_points -= 1
 	if hit_points == 0:
 		queue_free()
