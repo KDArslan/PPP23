@@ -1,6 +1,5 @@
-extends CharacterBody2D #CharacterBody statt StaticBody, da movement in Zukunft kommen soll
+extends CharacterBody2D 
 
-@export var HUD : PackedScene
 @export var hit_points = 3
 @export var speed : float = 70.0
 @export var attack_distance : float = 300
@@ -17,7 +16,7 @@ func _physics_process(_delta):
 		move_and_slide()
 
 func take_hit():
-	#print("argh")
+	#print("hit")
 	hit_points -= 1
 	if hit_points == 0:
 		queue_free()

@@ -7,6 +7,7 @@ extends Area2D
 func _physics_process(delta):
 	position += direction * speed * delta
 
+@warning_ignore("shadowed_variable")
 func _initialize(speed : float, direction : Vector2):
 	self.speed = speed
 	self.direction = direction.normalized()
