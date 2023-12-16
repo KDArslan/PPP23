@@ -3,6 +3,7 @@ class_name Avatar
 
 signal health_changed(current: int, max : int)
 
+
 @export var speed : float = 100.0
 @export var max_health = 5
 var current_health = max_health
