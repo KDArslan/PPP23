@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh4kto2758end"]
+[gd_scene load_steps=9 format=3 uid="uid://bh4kto2758end"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="2_ju0pl"]
+[ext_resource type="PackedScene" path="res://scenes/restart.tscn" id="2_lwd1v"]
 [ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="4_ialuy"]
 
@@ -20,6 +21,7 @@ border_color = Color(0.0117647, 0.0117647, 0.0117647, 1)
 
 [node name="Avatar" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_unvk1")
+game_over_scene = ExtResource("2_lwd1v")
 speed = 300.0
 
 [node name="Visuals" type="Sprite2D" parent="."]

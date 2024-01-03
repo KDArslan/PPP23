@@ -7,12 +7,6 @@ extends Control
 @export var current_time = 5.0
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	timer_label.text = str(current_time)
