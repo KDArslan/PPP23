@@ -9,7 +9,7 @@ var aim_direction : Vector2 = Vector2.RIGHT
 func _physics_process(_delta):
 	aim_direction = get_global_mouse_position() - global_position
 	aim_direction.normalized()
-	if Input.is_action_pressed("shoot") and firerate_timer.is_stopped(): 
+	if Input.is_action_pressed("shoot") and firerate_timer.is_stopped() and Global.current_time > 0: 
 		if projectile_firerate > 0:
 			firerate_timer.wait_time = 1/projectile_firerate
 		else:

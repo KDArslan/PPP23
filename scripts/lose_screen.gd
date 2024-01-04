@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @export var restart_scene : PackedScene
 @export var timer_scene : PackedScene
-@onready var time_passed_label : Label = $CenterContainer/VBoxContainer/TimePassedLabel
+@onready var time_passed_label : Label = $VBoxContainer/TimePassedLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
