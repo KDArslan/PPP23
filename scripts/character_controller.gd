@@ -3,13 +3,18 @@ class_name Avatar
 
 signal health_changed(current: int, max : int)
 
-@export var game_over_scene : PackedScene
+@export var lose_scene : PackedScene
 @export var speed : float = 100.0
 @export var max_health = 5
 var current_health = max_health
 
 func _ready():
 	health_changed.emit(current_health, max_health)
+	
+func _avatar_death():
+	queue_free()
+	var lose = lose_scene.instantiate()
+	get_tree().current_scene.add_child(lose)
 
 func _physics_process(_delta):
 	var input_value = Input.get_vector("left", "right", "up", "down")
@@ -20,15 +25,12 @@ func _physics_process(_delta):
 		var collision := get_slide_collision(index)
 		var body := collision.get_collider()
 		if body.is_in_group("enemy"):
-			queue_free()
-#			var restart = restart_scene.instantiate()
-#			get_tree().root.add_child(restart)
+			_avatar_death()
+
 
 func take_hit():
 	print("Auaa")
 	current_health -= 1
 	health_changed.emit(current_health, max_health)
 	if current_health <= 0:
-		queue_free()
-#		var restart = restart_scene.instantiate()
-#		get_tree().root.add_child(restart)
+		_avatar_death()
