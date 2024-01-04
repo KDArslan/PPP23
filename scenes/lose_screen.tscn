@@ -9,17 +9,27 @@ script = ExtResource("1_dtn86")
 restart_scene = ExtResource("2_5sp1t")
 timer_scene = ExtResource("3_tquv7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -38.0
-offset_top = 175.0
+offset_top = 200.0
 offset_right = 38.0
-offset_bottom = 227.0
+offset_bottom = 279.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="LoseLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Oh nooo!
 You lost :("
+horizontal_alignment = 1
+
+[node name="TimePassedLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1

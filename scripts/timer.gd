@@ -10,7 +10,7 @@ extends Control
 var start_time = current_time
 
 func _process(_delta):
-	var time_passed = current_time - start_time
+	Global.time_passed = start_time - current_time
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	timer_label.text = str(current_time)
 	if(is_instance_valid(player)):
