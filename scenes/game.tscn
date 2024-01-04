@@ -43,7 +43,6 @@ position = Vector2(-644, -322)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TimerHUD" parent="CanvasLayer" instance=ExtResource("7_vo2ix")]
-current_time = 20.0
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true

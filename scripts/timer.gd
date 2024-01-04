@@ -6,7 +6,7 @@ extends Control
 @onready var player = get_tree().get_first_node_in_group("player")
 
 @export var win_scene : PackedScene
-@export var current_time = 5.0
+@export var current_time : float = 20
 var start_time = current_time
 
 func _process(_delta):

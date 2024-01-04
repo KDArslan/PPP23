@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://buhcblg1f76hu"]
+
+[ext_resource type="Script" path="res://scripts/start_menu_layer.gd" id="1_sspdl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3xxi"]
+bg_color = Color(0.0745098, 0.231373, 0.203922, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.129412, 0.211765, 0.129412, 1)
+
+[node name="StartMenuLayer" type="CanvasLayer"]
+script = ExtResource("1_sspdl")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3xxi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.0
+offset_top = 110.0
+offset_right = 169.0
+offset_bottom = 160.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Shooty Shoot Survival"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = " Start Game "
+
+[node name="QuitButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
