@@ -1,5 +1,6 @@
 extends CharacterBody2D 
 
+@export var death_explosion : PackedScene 
 @export var hit_points = 3
 @export var speed : float = 70.0
 @export var attack_distance : float = 300
@@ -15,8 +16,15 @@ func _physics_process(_delta):
 		velocity = enemy_direction * speed
 		move_and_slide()
 
+func death_vfx():
+	var explosion = death_explosion.instantiate()
+	explosion.position = global_position
+	explosion.rotation = global_rotation
+	explosion.emitting = true
+	get_tree().current_scene.add_child(explosion)
+
 func take_hit():
-	#print("hit")
 	hit_points -= 1
 	if hit_points == 0:
 		queue_free()
+		death_vfx()

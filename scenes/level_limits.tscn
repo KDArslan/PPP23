@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqngedfkafuuv"]
 
-[ext_resource type="Texture2D" uid="uid://ilacrixnf85f" path="res://1x1_#FFFFFFFF.png" id="1_y200l"]
+[ext_resource type="Texture2D" uid="uid://ilacrixnf85f" path="res://visuals/1x1_#FFFFFFFF.png" id="1_y200l"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i8rfs"]
 distance = -1000.0

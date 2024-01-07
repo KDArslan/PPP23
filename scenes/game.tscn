@@ -40,9 +40,18 @@ position = Vector2(655, 80)
 [node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
 position = Vector2(-644, -322)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Enemy4" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(-202, -372)
 
-[node name="TimerHUD" parent="CanvasLayer" instance=ExtResource("7_vo2ix")]
+[node name="Enemy5" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(643, -56)
+
+[node name="Enemy6" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(481, -372)
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerHUD" parent="CanvasLayer" instance=ExtResource("7_vo2ix")]

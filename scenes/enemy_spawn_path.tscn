@@ -16,6 +16,7 @@ curve = SubResource("Curve2D_vhyrr")
 position = Vector2(-800, -500)
 script = ExtResource("1_ftv80")
 enemy_scene = ExtResource("2_h5n3q")
+spawn_frequency = 2.0
 
 [node name="Timer" type="Timer" parent="PathFollow2D"]
 autostart = true

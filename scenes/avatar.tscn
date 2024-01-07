@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
 [ext_resource type="PackedScene" uid="uid://c7q6mt2prljtp" path="res://scenes/lose_screen.tscn" id="2_gw5qg"]
-[ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://icon.svg" id="2_ju0pl"]
+[ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://visuals/icon.svg" id="3_onijr"]
 [ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="4_ialuy"]
 
@@ -26,7 +26,7 @@ speed = 300.0
 
 [node name="Visuals" type="Sprite2D" parent="."]
 scale = Vector2(0.53125, 0.511719)
-texture = ExtResource("2_ju0pl")
+texture = ExtResource("3_onijr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n0ksd")
