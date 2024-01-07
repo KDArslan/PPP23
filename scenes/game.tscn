@@ -23,31 +23,52 @@ editor_draw_limits = true
 [node name="EnemySpawnPath" parent="Avatar/Camera2D" instance=ExtResource("1_etdds")]
 
 [node name="Obstacle" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(-353, 376)
+position = Vector2(-970, -893)
 rotation = 0.806342
-scale = Vector2(5.22716, 0.531776)
+
+[node name="Obstacle10" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(-956, 854)
+rotation = 0.806342
+
+[node name="Obstacle3" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(975, -879)
+rotation = 0.806342
+
+[node name="Obstacle4" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(-1.00002, -902)
+rotation = 0.806342
+
+[node name="Obstacle5" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(901, 859)
+rotation = 0.806342
+
+[node name="Obstacle2" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(-10.0001, 854)
+rotation = 0.806342
 
 [node name="Obstacle6" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(187, 574)
-scale = Vector2(5.685, 0.39)
+position = Vector2(-429, 219)
+
+[node name="Obstacle7" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(450, 250)
+
+[node name="Obstacle8" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(514, -227)
+
+[node name="Obstacle9" parent="." instance=ExtResource("2_cj7jx")]
+position = Vector2(-440, -211)
 
 [node name="Enemy" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(-560, 407)
+position = Vector2(618, -83)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(655, 80)
-
-[node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(-644, -322)
+position = Vector2(-228, 478)
 
 [node name="Enemy4" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(-202, -372)
+position = Vector2(289, 519)
 
-[node name="Enemy5" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(643, -56)
-
-[node name="Enemy6" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(481, -372)
+[node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
+position = Vector2(762, 140)
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -55,3 +76,4 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TimerHUD" parent="CanvasLayer" instance=ExtResource("7_vo2ix")]
+current_time = 60.0

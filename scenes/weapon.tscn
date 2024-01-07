@@ -6,7 +6,8 @@
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_sn546")
 projectile_scene = ExtResource("2_fuch6")
-projectile_firerate = 7.0
+projectile_speed = 350.0
+projectile_firerate = 3.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

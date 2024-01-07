@@ -6,6 +6,7 @@
 [node name="EnemyWeapon" type="Node2D"]
 script = ExtResource("1_oqqjp")
 enemy_projectile_scene = ExtResource("2_imr4q")
+projectile_speed = 150.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
