@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh4kto2758end"]
+[gd_scene load_steps=10 format=3 uid="uid://bh4kto2758end"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
+[ext_resource type="PackedScene" uid="uid://y8uqdu6wrfdf" path="res://scenes/avatar_death_explosion.tscn" id="2_3gbdl"]
 [ext_resource type="PackedScene" uid="uid://c7q6mt2prljtp" path="res://scenes/lose_screen.tscn" id="2_gw5qg"]
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://visuals/icon.svg" id="3_onijr"]
 [ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
@@ -21,6 +22,7 @@ border_color = Color(0.0117647, 0.0117647, 0.0117647, 1)
 
 [node name="Avatar" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_unvk1")
+death_explosion = ExtResource("2_3gbdl")
 lose_scene = ExtResource("2_gw5qg")
 speed = 300.0
 
@@ -48,5 +50,9 @@ rounded = true
 show_percentage = false
 script = ExtResource("4_ialuy")
 
+[node name="GameOverTimer" type="Timer" parent="."]
+process_callback = 0
+
 [connection signal="health_changed" from="." to="HealthBar" method="_on_avatar_health_changed"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
