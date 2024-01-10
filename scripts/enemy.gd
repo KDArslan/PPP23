@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var attack_distance : float = 300
 var enemy_direction : Vector2
 
+signal hit()
+
 func _physics_process(_delta):
 	var player = get_tree().get_first_node_in_group("player")
 	player = player as Node2D
@@ -24,7 +26,9 @@ func death_vfx():
 	get_tree().current_scene.add_child(explosion)
 
 func take_hit():
+	hit.emit()
 	hit_points -= 1
 	if hit_points == 0:
+		#hit.emit()
 		queue_free()
 		death_vfx()

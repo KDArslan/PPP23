@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7c2vxevwj3n6"]
+[gd_scene load_steps=7 format=3 uid="uid://b7c2vxevwj3n6"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_r3vu0"]
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://visuals/icon.svg" id="2_rje4a"]
 [ext_resource type="PackedScene" uid="uid://cn6aifn2uhou7" path="res://scenes/enemy_explosion.tscn" id="2_se8ia"]
 [ext_resource type="PackedScene" uid="uid://0ssif2gymerd" path="res://scenes/enemy_weapon.tscn" id="3_tpxu5"]
+[ext_resource type="AudioStream" uid="uid://bcowv8reb52id" path="res://sounds/alarmnotification-163911.mp3" id="5_qadic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gg6kx"]
 size = Vector2(73.5, 65.5)
@@ -23,4 +24,8 @@ shape = SubResource("RectangleShape2D_gg6kx")
 
 [node name="EnemyWeapon" parent="." instance=ExtResource("3_tpxu5")]
 
+[node name="EnemyHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qadic")
+
+[connection signal="hit" from="." to="EnemyHitSound" method="play"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
