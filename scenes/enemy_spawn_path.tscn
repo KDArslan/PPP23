@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbnw70ayk52pg"]
+[gd_scene load_steps=5 format=3 uid="uid://cbnw70ayk52pg"]
 
 [ext_resource type="Script" path="res://scripts/enemy_spawn_path.gd" id="1_ftv80"]
 [ext_resource type="PackedScene" uid="uid://b7c2vxevwj3n6" path="res://scenes/enemy.tscn" id="2_h5n3q"]
+[ext_resource type="AudioStream" uid="uid://cl1jjke4pcce" path="res://sounds/spawn-sound-43782.mp3" id="3_5xr8g"]
 
 [sub_resource type="Curve2D" id="Curve2D_vhyrr"]
 _data = {
@@ -24,5 +25,9 @@ autostart = true
 wait_time = 15.0
 autostart = true
 
+[node name="SpawnSound" type="AudioStreamPlayer2D" parent="PathFollow2D"]
+stream = ExtResource("3_5xr8g")
+
+[connection signal="on_spawn" from="PathFollow2D" to="PathFollow2D" method="_on_on_spawn"]
 [connection signal="timeout" from="PathFollow2D/SpawnTimer" to="PathFollow2D" method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="PathFollow2D/DifficultyTimer" to="PathFollow2D" method="_on_difficulty_timer_timeout"]
