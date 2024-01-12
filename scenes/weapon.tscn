@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="1_sn546"]
 [ext_resource type="PackedScene" uid="uid://bmxnhibsoli0g" path="res://scenes/projectile.tscn" id="2_fuch6"]
-[ext_resource type="AudioStream" uid="uid://d3t0glmb34gla" path="res://sounds/shootSound.mp3" id="3_154wl"]
+[ext_resource type="AudioStream" uid="uid://p3od2acbj3k5" path="res://sounds/gun-3.wav" id="3_cpwpc"]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_sn546")
@@ -15,6 +15,6 @@ wait_time = 0.1
 one_shot = true
 
 [node name="ShootSound2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_154wl")
+stream = ExtResource("3_cpwpc")
 
 [connection signal="on_shoot" from="." to="." method="_on_on_shoot"]

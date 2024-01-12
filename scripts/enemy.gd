@@ -30,10 +30,9 @@ func take_hit():
 	hit.emit()
 	hit_points -= 1
 	if hit_points == 0:
-		on_death.emit()
-		queue_free()
+		_on_on_death()
 		death_vfx()
-
+		queue_free()
 
 func _on_on_death():
 	Global.enemy_kill_count += 1
