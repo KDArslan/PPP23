@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://5odq58vkilpd"]
+[gd_scene load_steps=8 format=3 uid="uid://5odq58vkilpd"]
 
 [ext_resource type="PackedScene" uid="uid://cbnw70ayk52pg" path="res://scenes/enemy_spawn_path.tscn" id="1_etdds"]
 [ext_resource type="PackedScene" uid="uid://bh4kto2758end" path="res://scenes/avatar.tscn" id="1_lbbmi"]
 [ext_resource type="PackedScene" uid="uid://dtq4wwxfb7tq4" path="res://scenes/obstacle.tscn" id="2_cj7jx"]
 [ext_resource type="PackedScene" uid="uid://b7c2vxevwj3n6" path="res://scenes/enemy.tscn" id="3_1727g"]
+[ext_resource type="Script" path="res://scripts/camera_focus.gd" id="4_kmhjy"]
 [ext_resource type="PackedScene" uid="uid://bqngedfkafuuv" path="res://scenes/level_limits.tscn" id="5_3kays"]
 [ext_resource type="PackedScene" uid="uid://bk3hy7kqth31s" path="res://scenes/timer.tscn" id="7_vo2ix"]
 
@@ -13,14 +14,17 @@
 
 [node name="Avatar" parent="." instance=ExtResource("1_lbbmi")]
 
-[node name="Camera2D" type="Camera2D" parent="Avatar"]
+[node name="EnemySpawnPath" parent="Avatar" instance=ExtResource("1_etdds")]
+
+[node name="CameraFocus" type="Node2D" parent="."]
+script = ExtResource("4_kmhjy")
+
+[node name="Camera2D" type="Camera2D" parent="CameraFocus"]
 limit_left = -1900
 limit_top = -1900
 limit_right = 1900
 limit_bottom = 1900
 editor_draw_limits = true
-
-[node name="EnemySpawnPath" parent="Avatar/Camera2D" instance=ExtResource("1_etdds")]
 
 [node name="Obstacle" parent="." instance=ExtResource("2_cj7jx")]
 position = Vector2(-970, -893)
