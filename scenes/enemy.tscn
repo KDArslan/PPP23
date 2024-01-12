@@ -29,3 +29,4 @@ stream = ExtResource("5_qadic")
 
 [connection signal="hit" from="." to="EnemyHitSound" method="play"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="on_death" from="." to="." method="_on_on_death"]
