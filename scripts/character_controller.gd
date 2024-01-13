@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Avatar
 
 signal health_changed(current: int, max : int)
+signal hit()
 
 @onready var game_over_timer : Timer = $GameOverTimer
 @onready var body : CollisionShape2D = $CollisionShape2D
@@ -16,7 +17,7 @@ func _ready():
 	health_changed.emit(current_health, max_health)
 
 func take_hit():
-	#print("Auaa")
+	hit.emit()
 	current_health -= 1
 	health_changed.emit(current_health, max_health)
 	if current_health <= 0:

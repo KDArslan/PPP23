@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://olqma1wxro3t"
-path="res://.godot/imported/explode-7.wav-bda68dabb724177fabc28396f14b4466.sample"
+uid="uid://bi1hq0hhfjw7n"
+path="res://.godot/imported/enemy_shoot.wav-1e12f4e3786c1bb0deaf54b7f5f626e0.sample"
 
 [deps]
 
-source_file="res://sounds/explode-7.wav"
-dest_files=["res://.godot/imported/explode-7.wav-bda68dabb724177fabc28396f14b4466.sample"]
+source_file="res://sounds/enemy_shoot.wav"
+dest_files=["res://.godot/imported/enemy_shoot.wav-1e12f4e3786c1bb0deaf54b7f5f626e0.sample"]
 
 [params]
 

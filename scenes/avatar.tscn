@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh4kto2758end"]
+[gd_scene load_steps=11 format=3 uid="uid://bh4kto2758end"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
 [ext_resource type="PackedScene" uid="uid://y8uqdu6wrfdf" path="res://scenes/avatar_death_explosion.tscn" id="2_3gbdl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://visuals/icon.svg" id="3_onijr"]
 [ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="4_ialuy"]
+[ext_resource type="AudioStream" uid="uid://bj1f0tkyp4ht1" path="res://sounds/player_hit.wav" id="7_40rfl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ksd"]
 size = Vector2(59.5, 57.5)
@@ -53,6 +54,11 @@ script = ExtResource("4_ialuy")
 [node name="GameOverTimer" type="Timer" parent="."]
 process_callback = 0
 
+[node name="AvatarHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_40rfl")
+volume_db = -20.0
+
 [connection signal="health_changed" from="." to="HealthBar" method="_on_avatar_health_changed"]
+[connection signal="hit" from="." to="AvatarHitSound" method="play"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://y8uqdu6wrfdf"]
+[gd_scene load_steps=5 format=3 uid="uid://y8uqdu6wrfdf"]
+
+[ext_resource type="Script" path="res://scripts/avatar_death_explosion.gd" id="1_0ters"]
+[ext_resource type="AudioStream" uid="uid://ewb51kkhu8vx" path="res://sounds/player_death.wav" id="2_yue8v"]
 
 [sub_resource type="Curve" id="Curve_01ahw"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.785311, 0), 0.0, 0.0, 0, 0]
@@ -23,3 +26,7 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_01ahw")
 color = Color(0.705882, 0.454902, 0.717647, 1)
 color_ramp = SubResource("Gradient_nvwa3")
+script = ExtResource("1_0ters")
+
+[node name="AvatarDeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_yue8v")

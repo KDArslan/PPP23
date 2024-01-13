@@ -8,6 +8,7 @@ func _ready():
 	var restart = restart_scene.instantiate()
 	get_tree().current_scene.add_child(restart)
 	enemy_kill_count.text = str("You killed " + str(Global.enemy_kill_count) + " enemies")
+	$WinSound.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

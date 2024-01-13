@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://visuals/icon.svg" id="2_rje4a"]
 [ext_resource type="PackedScene" uid="uid://cn6aifn2uhou7" path="res://scenes/enemy_explosion.tscn" id="2_se8ia"]
 [ext_resource type="PackedScene" uid="uid://0ssif2gymerd" path="res://scenes/enemy_weapon.tscn" id="3_tpxu5"]
-[ext_resource type="AudioStream" uid="uid://c77aa8u40ewde" path="res://sounds/hit-7.wav" id="5_cius2"]
+[ext_resource type="AudioStream" uid="uid://c77aa8u40ewde" path="res://sounds/enemy_hit.wav" id="5_d8x1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gg6kx"]
 size = Vector2(73.5, 65.5)
@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_gg6kx")
 [node name="EnemyWeapon" parent="." instance=ExtResource("3_tpxu5")]
 
 [node name="EnemyHitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_cius2")
+stream = ExtResource("5_d8x1t")
 
 [connection signal="hit" from="." to="EnemyHitSound" method="play"]
 [connection signal="on_death" from="." to="." method="_on_on_death"]
