@@ -5,8 +5,6 @@ extends PathFollow2D
 @export var enemy_scene : PackedScene
 @export var spawn_wait : float = 2.0
 
-signal on_spawn()
-
 func _on_difficulty_timer_timeout():
 	spawn_wait *= 0.5
 
@@ -21,7 +19,3 @@ func _on_spawn_timer_timeout():
 	var new_enemy = enemy_scene.instantiate()
 	new_enemy.position = global_position
 	get_tree().current_scene.add_child(new_enemy)
-
-func _on_on_spawn():
-	var spawn_sound = $SpawnSound
-	spawn_sound.play() 

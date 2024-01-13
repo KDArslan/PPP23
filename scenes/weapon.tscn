@@ -17,4 +17,4 @@ one_shot = true
 [node name="ShootSound2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ug4ii")
 
-[connection signal="on_shoot" from="." to="." method="_on_on_shoot"]
+[connection signal="shot" from="." to="ShootSound2D" method="play"]

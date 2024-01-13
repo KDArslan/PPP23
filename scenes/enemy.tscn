@@ -28,4 +28,3 @@ shape = SubResource("RectangleShape2D_gg6kx")
 stream = ExtResource("5_d8x1t")
 
 [connection signal="hit" from="." to="EnemyHitSound" method="play"]
-[connection signal="on_death" from="." to="." method="_on_on_death"]

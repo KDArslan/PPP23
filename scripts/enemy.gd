@@ -7,7 +7,7 @@ extends CharacterBody2D
 var enemy_direction : Vector2
 
 signal hit()
-signal on_death()
+signal death()
 
 func _physics_process(_delta):
 	var player = get_tree().get_first_node_in_group("player")
@@ -30,9 +30,9 @@ func take_hit():
 	hit.emit()
 	hit_points -= 1
 	if hit_points == 0:
-		_on_on_death()
+		_on_death()
 		death_vfx()
 		queue_free()
 
-func _on_on_death():
+func _on_death():
 	Global.enemy_kill_count += 1
