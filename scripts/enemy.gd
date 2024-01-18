@@ -9,6 +9,15 @@ var enemy_direction : Vector2
 signal hit()
 signal death()
 
+@export var stats : Resource 
+
+#faulty
+#func _ready():
+	#hit_points = stats.hit_points
+#	if stats:
+#		hit_points = stats.hit_points
+#		speed = stats.speed
+
 func _physics_process(_delta):
 	var player = get_tree().get_first_node_in_group("player")
 	player = player as Node2D
