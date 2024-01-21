@@ -32,7 +32,7 @@ func death_vfx():
 
 func _avatar_death():
 	living = false
-	if game_over_timer.is_stopped() and Global.current_time <= 0:
+	if game_over_timer.is_stopped() and Global.current_time > 0:
 		game_over_timer.start()
 		death_vfx()
 		self.visible = false

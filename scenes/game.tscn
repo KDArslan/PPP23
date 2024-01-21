@@ -85,3 +85,6 @@ one_shot = true
 
 [node name="TimerHUD" parent="CanvasLayer" instance=ExtResource("7_vo2ix")]
 current_time = 30.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.588235, 0.8, 0.976471, 1)
