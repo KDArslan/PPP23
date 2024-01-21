@@ -3,10 +3,10 @@ extends PathFollow2D
 @onready var spawn_timer : Timer = $SpawnTimer
 @onready var difficulty_timer : Timer = $DifficultyTimer
 @export var enemy_scene : PackedScene
-@export var spawn_wait : float = 2.0
+@export var spawn_wait : float = 1.0
 
-func _on_ready():
-	difficulty_timer.wait_time = Global.current_time/3
+func _ready():
+	difficulty_timer.wait_time = Global.start_time/3
 
 func _on_difficulty_timer_timeout():
 	spawn_wait *= 0.3

@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_tpa32")
 hit_points = 3
-speed = 75.0
+speed = 90.0
+firerate = 2.0

@@ -1,12 +1,25 @@
 extends Node2D
 
+@onready var firerate_timer : Timer = $Timer
+var aim_direction : Vector2 = Vector2.RIGHT 
+var enemy_direction : Vector2
+
 @export var enemy_projectile_scene : PackedScene
 @export var projectile_speed : float = 200.0
 @export var projectile_firerate : float = 1
-var aim_direction : Vector2 = Vector2.RIGHT 
-@onready var firerate_timer : Timer = $Timer
 @export var attack_distance : float = 300
-var enemy_direction : Vector2
+
+@export var weak_enemy : Resource
+@export var medium_enemy : Resource
+@export var strong_enemy : Resource
+
+func _ready():
+	if Global.current_time >= Global.start_time*0.66:
+		projectile_firerate = weak_enemy.firerate
+	if Global.current_time <= Global.start_time*0.66 and Global.current_time > Global.start_time*0.33:
+		projectile_firerate = medium_enemy.firerate
+	if Global.current_time <= Global.start_time*0.33:
+		projectile_firerate = medium_enemy.firerate
 
 func _physics_process(_delta):
 	var player = get_tree().get_first_node_in_group("player")

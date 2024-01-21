@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_lwt58")
 hit_points = 5
-speed = 100.0
+speed = 150.0
+firerate = 3.0
