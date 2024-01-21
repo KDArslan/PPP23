@@ -12,6 +12,58 @@
 
 [node name="LevelLimits" parent="." instance=ExtResource("5_3kays")]
 
+[node name="LevelObstaclesContainer" type="Node2D" parent="."]
+
+[node name="Obstacle" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(-970, -893)
+rotation = 0.806342
+
+[node name="Obstacle2" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(-10.0001, 854)
+rotation = 0.806342
+
+[node name="Obstacle3" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(975, -879)
+rotation = 0.806342
+
+[node name="Obstacle4" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(-1.00002, -902)
+rotation = 0.806342
+
+[node name="Obstacle5" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(901, 859)
+rotation = 0.806342
+
+[node name="Obstacle6" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(-437, 247)
+
+[node name="Obstacle8" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(459, -247)
+
+[node name="Obstacle7" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(450, 250)
+
+[node name="Obstacle9" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(-435, -238)
+
+[node name="Obstacle10" parent="LevelObstaclesContainer" instance=ExtResource("2_cj7jx")]
+position = Vector2(-956, 854)
+rotation = 0.806342
+
+[node name="EnemiesInitialSpawn" type="Node2D" parent="."]
+
+[node name="Enemy" parent="EnemiesInitialSpawn" instance=ExtResource("3_1727g")]
+position = Vector2(618, -83)
+
+[node name="Enemy2" parent="EnemiesInitialSpawn" instance=ExtResource("3_1727g")]
+position = Vector2(-228, 478)
+
+[node name="Enemy3" parent="EnemiesInitialSpawn" instance=ExtResource("3_1727g")]
+position = Vector2(762, 140)
+
+[node name="Enemy4" parent="EnemiesInitialSpawn" instance=ExtResource("3_1727g")]
+position = Vector2(289, 519)
+
 [node name="Avatar" parent="." instance=ExtResource("1_lbbmi")]
 
 [node name="EnemySpawnPath" parent="Avatar" instance=ExtResource("1_etdds")]
@@ -25,54 +77,6 @@ limit_top = -1900
 limit_right = 1900
 limit_bottom = 1900
 editor_draw_limits = true
-
-[node name="Obstacle" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(-970, -893)
-rotation = 0.806342
-
-[node name="Obstacle10" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(-956, 854)
-rotation = 0.806342
-
-[node name="Obstacle3" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(975, -879)
-rotation = 0.806342
-
-[node name="Obstacle4" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(-1.00002, -902)
-rotation = 0.806342
-
-[node name="Obstacle5" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(901, 859)
-rotation = 0.806342
-
-[node name="Obstacle2" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(-10.0001, 854)
-rotation = 0.806342
-
-[node name="Obstacle6" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(-429, 219)
-
-[node name="Obstacle7" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(450, 250)
-
-[node name="Obstacle8" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(514, -227)
-
-[node name="Obstacle9" parent="." instance=ExtResource("2_cj7jx")]
-position = Vector2(-440, -211)
-
-[node name="Enemy" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(618, -83)
-
-[node name="Enemy2" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(-228, 478)
-
-[node name="Enemy4" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(289, 519)
-
-[node name="Enemy3" parent="." instance=ExtResource("3_1727g")]
-position = Vector2(762, 140)
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true

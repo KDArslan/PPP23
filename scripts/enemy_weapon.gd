@@ -38,3 +38,7 @@ func _physics_process(_delta):
 			enemy_projectile._initialize(projectile_speed, enemy_direction)
 			#Reset Timer
 			firerate_timer.start()
+			if Global.current_time <= 0:
+				var projectiles = get_tree().get_nodes_in_group("projectile")
+				for projectile in projectiles:
+					projectile.queue_free()
