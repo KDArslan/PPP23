@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtq4wwxfb7tq4"]
+[gd_scene load_steps=5 format=3 uid="uid://dtq4wwxfb7tq4"]
 
 [ext_resource type="Script" path="res://scripts/obstacle.gd" id="1_qwj1h"]
 [ext_resource type="Texture2D" uid="uid://ilacrixnf85f" path="res://visuals/1x1_#FFFFFFFF.png" id="2_x2ixb"]
+[ext_resource type="Texture2D" uid="uid://bwumlnwwr24xo" path="res://visuals/2d_lights_and_shadows_neutral_point_light.webp" id="3_gxj3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7oh54"]
 size = Vector2(120, 120)
@@ -16,3 +17,9 @@ texture = ExtResource("2_x2ixb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7oh54")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(3.26465, 2.95264)
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("3_gxj3s")

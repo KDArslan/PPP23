@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh4kto2758end"]
+[gd_scene load_steps=12 format=3 uid="uid://bh4kto2758end"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
 [ext_resource type="PackedScene" uid="uid://y8uqdu6wrfdf" path="res://scenes/avatar_death_explosion.tscn" id="2_3gbdl"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="4_ialuy"]
 [ext_resource type="AudioStream" uid="uid://bj1f0tkyp4ht1" path="res://sounds/player_hit.wav" id="7_40rfl"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wug3q"]
+polygon = PackedVector2Array(64, -58.1, 64, 55, 55.7, 64, -56.3, 64, -64, 58, -64, 55, -64, -55.1, -58.1, -64, -55.5, -64, 55.1, -64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0ksd"]
 size = Vector2(59.5, 57.5)
@@ -26,6 +29,10 @@ script = ExtResource("1_unvk1")
 death_explosion = ExtResource("2_3gbdl")
 lose_scene = ExtResource("2_gw5qg")
 speed = 300.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(0.53125, 0.511719)
+occluder = SubResource("OccluderPolygon2D_wug3q")
 
 [node name="Visuals" type="Sprite2D" parent="."]
 scale = Vector2(0.53125, 0.511719)

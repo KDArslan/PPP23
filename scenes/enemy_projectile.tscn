@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://j84io0yin7pq"]
+[gd_scene load_steps=6 format=3 uid="uid://j84io0yin7pq"]
 
 [ext_resource type="Script" path="res://scripts/enemy_projectile.gd" id="1_bh0be"]
 [ext_resource type="Texture2D" uid="uid://k0kd50v286yk" path="res://visuals/icon.svg" id="2_2s7r0"]
 [ext_resource type="PackedScene" uid="uid://bl2mgr8vci1oq" path="res://scenes/projectile_explosion.tscn" id="2_agnvs"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_55vpi"]
+polygon = PackedVector2Array(53, -54.1, 56, -52.1, 56, 53, 54.1, 53, 52.1, 56, -53, 56, -53, 54.1, -56, 52.1, -56, -52.1, -53, -54.1, -53, -56, 53, -56)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nltl8"]
 
 [node name="EnemyProjectile" type="Area2D" groups=["projectile"]]
 script = ExtResource("1_bh0be")
 projectile_explosion = ExtResource("2_agnvs")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+scale = Vector2(0.0917969, 0.0976563)
+occluder = SubResource("OccluderPolygon2D_55vpi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.0470588, 0, 0.219608, 1)
