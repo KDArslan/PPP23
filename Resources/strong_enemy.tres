@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://cx88ab2l0xavb"]
+
+[ext_resource type="Script" path="res://scripts/enemy_resource.gd" id="1_lwt58"]
+
+[resource]
+script = ExtResource("1_lwt58")
+hit_points = 5
+speed = 100.0

@@ -5,15 +5,19 @@ extends PathFollow2D
 @export var enemy_scene : PackedScene
 @export var spawn_wait : float = 2.0
 
+func _on_ready():
+	difficulty_timer.wait_time = Global.current_time/3
+
 func _on_difficulty_timer_timeout():
-	spawn_wait *= 0.5
+	spawn_wait *= 0.3
 
 func _on_spawn_timer_timeout():
+	if Global.current_time <= 1:
+		return
 	spawn_timer.wait_time = spawn_wait
 	var rng : RandomNumberGenerator = RandomNumberGenerator.new()
 	var spawn_point = rng.randf_range(0.0, 1.0)
 	progress_ratio = spawn_point
-	#print("Enemy spawned at pos: (" + str(spawn_point.x) + ", " + str(spawn_point.y) + ")")
 	
 	#spawn enemy
 	var new_enemy = enemy_scene.instantiate()

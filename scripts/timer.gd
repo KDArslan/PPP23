@@ -9,6 +9,8 @@ extends Control
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var start_time = current_time
 
+func _ready():
+	Global.start_time = start_time
 
 func _process(_delta):
 	Global.current_time = current_time
@@ -25,6 +27,7 @@ func _process(_delta):
 				enemy.queue_free()
 				var win = win_scene.instantiate()
 				get_tree().current_scene.add_child(win)
+
 	else:
 		game_timer.stop()
 		#print(current_time)

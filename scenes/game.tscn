@@ -80,4 +80,4 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TimerHUD" parent="CanvasLayer" instance=ExtResource("7_vo2ix")]
-current_time = 60.0
+current_time = 30.0
