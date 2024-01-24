@@ -19,7 +19,7 @@ func _physics_process(_delta):
 		shot.emit()
 		#Node aus PackedScene erzeugen 
 		var projectile = projectile_scene.instantiate()
-		get_tree().root.add_child(projectile)
+		get_tree().current_scene.add_child(projectile)
 		projectile.position = global_position
 		#setzten der Richtung und der Geschwindigkeit der Projektile
 		projectile._initialize(projectile_speed, aim_direction)
