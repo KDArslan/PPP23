@@ -35,7 +35,7 @@ func _avatar_death():
 	if game_over_timer.is_stopped() and Global.current_time > 0:
 		game_over_timer.start()
 		death_vfx()
-		self.visible = false
+		#self.visible = false
 	
 func _on_game_over_timer_timeout():
 	var lose = lose_scene.instantiate()

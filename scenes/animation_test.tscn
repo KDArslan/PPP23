@@ -5,27 +5,36 @@
 [ext_resource type="Script" path="res://scripts/animation_player.gd" id="3_esq0o"]
 [ext_resource type="Script" path="res://scripts/animation_tree.gd" id="4_4l6g8"]
 
-[sub_resource type="Animation" id="Animation_h634k"]
-resource_name = "walk_anim"
-length = 1.0
-loop_mode = 1
-step = 0.0333333
+[sub_resource type="Animation" id="Animation_crgxx"]
+resource_name = "RESET"
+length = 0.10001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.5, 0.733333, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0, -0.0872665, 0.0, 0.0872665, 0.0]
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_y5t6t"]
 resource_name = "death_anim"
-length = 1.0
 step = 0.0333333
 tracks/0/type = "audio"
 tracks/0/imported = false
@@ -55,37 +64,8 @@ tracks/1/keys = {
 "values": [Vector2(1, 1), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_crgxx"]
-resource_name = "RESET"
-length = 0.10001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="Animation" id="Animation_p5mjj"]
 resource_name = "idle_anim"
-length = 1.0
 loop_mode = 2
 step = 0.0333333
 tracks/0/type = "value"
@@ -95,10 +75,27 @@ tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.966667),
+"times": PackedFloat32Array(0, 0.4995, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h634k"]
+resource_name = "walk_anim"
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.733333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0, 0.0872665, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fpmo0"]
@@ -158,13 +155,16 @@ texture = ExtResource("1_ycaxh")
 position = Vector2(-1, -1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle_anim"
 libraries = {
 "": SubResource("AnimationLibrary_fpmo0")
 }
+autoplay = "idle_anim"
 script = ExtResource("3_esq0o")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fpmo0")
+}
 tree_root = SubResource("AnimationNodeStateMachine_vkpvw")
 anim_player = NodePath("../AnimationPlayer")
 script = ExtResource("4_4l6g8")

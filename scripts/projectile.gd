@@ -8,7 +8,7 @@ class_name Projectile
 func _physics_process(delta):
 	position += direction * speed * delta
 
-func _initialize(speed : float, direction : Vector2):
+func _initialize(speed, direction):
 	self.speed = speed
 	self.direction = direction.normalized()
 

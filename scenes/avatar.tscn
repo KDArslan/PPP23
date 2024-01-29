@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bh4kto2758end"]
+[gd_scene load_steps=27 format=3 uid="uid://bh4kto2758end"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_unvk1"]
 [ext_resource type="PackedScene" uid="uid://y8uqdu6wrfdf" path="res://scenes/avatar_death_explosion.tscn" id="2_3gbdl"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://rvpa8wolsswx" path="res://scenes/weapon.tscn" id="3_uh6k7"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="4_ialuy"]
 [ext_resource type="AudioStream" uid="uid://bj1f0tkyp4ht1" path="res://sounds/player_hit.wav" id="7_40rfl"]
+[ext_resource type="Script" path="res://scripts/avatar_anim.gd" id="8_rdtdl"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wug3q"]
 polygon = PackedVector2Array(64, -58.1, 64, 55, 55.7, 64, -56.3, 64, -64, 58, -64, 55, -64, -55.1, -58.1, -64, -55.5, -64, 55.1, -64)
@@ -23,6 +24,129 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.0117647, 0.0117647, 0.0117647, 1)
+
+[sub_resource type="Animation" id="Animation_elymq"]
+resource_name = "RESET"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_uuwqt"]
+resource_name = "idle_anim"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u6ylf"]
+resource_name = "walk_anim"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, 0.0, -0.0872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pcc0m"]
+resource_name = "death_anim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oypmj"]
+_data = {
+"RESET": SubResource("Animation_elymq"),
+"death_anim": SubResource("Animation_pcc0m"),
+"idle_anim": SubResource("Animation_uuwqt"),
+"walk_anim": SubResource("Animation_u6ylf")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qnt1f"]
+animation = &"death_anim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ijqws"]
+animation = &"idle_anim"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_51vdh"]
+animation = &"walk_anim"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xjpp2"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rvuoi"]
+advance_mode = 2
+advance_expression = "living == false"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0gpru"]
+advance_mode = 2
+advance_expression = "living == false"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m3byv"]
+advance_mode = 2
+advance_expression = "moving == true"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a73hw"]
+advance_mode = 2
+advance_expression = "moving == false"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ia41g"]
+states/death_anim/node = SubResource("AnimationNodeAnimation_qnt1f")
+states/death_anim/position = Vector2(591, 100)
+states/idle_anim/node = SubResource("AnimationNodeAnimation_ijqws")
+states/idle_anim/position = Vector2(404, 46)
+states/walk_anim/node = SubResource("AnimationNodeAnimation_51vdh")
+states/walk_anim/position = Vector2(404, 189)
+transitions = ["Start", "idle_anim", SubResource("AnimationNodeStateMachineTransition_xjpp2"), "idle_anim", "death_anim", SubResource("AnimationNodeStateMachineTransition_rvuoi"), "walk_anim", "death_anim", SubResource("AnimationNodeStateMachineTransition_0gpru"), "idle_anim", "walk_anim", SubResource("AnimationNodeStateMachineTransition_m3byv"), "walk_anim", "idle_anim", SubResource("AnimationNodeStateMachineTransition_a73hw")]
+graph_offset = Vector2(-112, 19)
 
 [node name="Avatar" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_unvk1")
@@ -64,6 +188,20 @@ process_callback = 0
 [node name="AvatarHitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_40rfl")
 volume_db = -20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oypmj")
+}
+autoplay = "idle_anim"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oypmj")
+}
+tree_root = SubResource("AnimationNodeStateMachine_ia41g")
+anim_player = NodePath("../AnimationPlayer")
+script = ExtResource("8_rdtdl")
 
 [connection signal="health_changed" from="." to="HealthBar" method="_on_avatar_health_changed"]
 [connection signal="hit" from="." to="AvatarHitSound" method="play"]

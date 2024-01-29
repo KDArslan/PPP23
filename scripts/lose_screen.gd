@@ -11,7 +11,3 @@ func _ready():
 	get_tree().current_scene.add_child(restart)
 	time_passed_label.text = str("You survived " + str(Global.time_passed) + " seconds")
 	enemy_kill_count.text = str("You killed " + str(Global.enemy_kill_count) + " enemies")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
