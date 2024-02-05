@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://rvpa8wolsswx"]
+[gd_scene load_steps=6 format=3 uid="uid://rvpa8wolsswx"]
 
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="1_sn546"]
 [ext_resource type="PackedScene" uid="uid://bmxnhibsoli0g" path="res://scenes/projectile.tscn" id="2_fuch6"]
+[ext_resource type="Resource" uid="uid://cx1i6tnwyrccw" path="res://Resources/pistol.tres" id="3_4nlqg"]
 [ext_resource type="AudioStream" uid="uid://p3od2acbj3k5" path="res://sounds/player_shoot.wav" id="3_ug4ii"]
+[ext_resource type="Resource" uid="uid://ck5td6evmh0lw" path="res://Resources/shotgun.tres" id="4_5jyfo"]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_sn546")
 projectile_scene = ExtResource("2_fuch6")
 projectile_speed = 350.0
 projectile_firerate = 3.0
+pistol = ExtResource("3_4nlqg")
+shotgun = ExtResource("4_5jyfo")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

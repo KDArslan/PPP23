@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=2 format=3 uid="uid://ck5td6evmh0lw"]
+
+[ext_resource type="Script" path="res://scripts/weapon_resource.gd" id="1_8lhxv"]
+
+[resource]
+script = ExtResource("1_8lhxv")
+burst_amount = 5
+size = 0.7
+projectile_speed = 700.0
+spread_cone_angle = Vector2(0, 0)
