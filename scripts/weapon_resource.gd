@@ -2,7 +2,7 @@ extends Resource
 class_name WeaponResource
 
 @export var burst_amount : int
-@export var size : float
+@export var projectile_size : Vector2
 @export var projectile_speed : float 
 @export var spread_cone_angle : Vector2
 

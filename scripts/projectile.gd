@@ -4,13 +4,15 @@ class_name Projectile
 @export var speed : float = 500
 @export var direction : Vector2 = Vector2.RIGHT
 @export var projectile_explosion : PackedScene
+@export var size : Vector2 
 
 func _physics_process(delta):
 	position += direction * speed * delta
 
-func _initialize(speed, direction):
+func _initialize(speed, direction, size):
 	self.speed = speed
 	self.direction = direction.normalized()
+	self.scale = size
 
 func explode():
 	var explosion = projectile_explosion.instantiate()
