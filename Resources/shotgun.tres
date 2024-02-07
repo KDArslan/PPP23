@@ -7,4 +7,4 @@ script = ExtResource("1_8lhxv")
 burst_amount = 5
 projectile_size = Vector2(0.6, 0.6)
 projectile_speed = 700.0
-spread_cone_angle = Vector2(0, 0)
+spread_cone_angle = 60.0

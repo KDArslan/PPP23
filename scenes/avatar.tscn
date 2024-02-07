@@ -190,15 +190,12 @@ stream = ExtResource("7_40rfl")
 volume_db = -20.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle_anim"
 libraries = {
 "": SubResource("AnimationLibrary_oypmj")
 }
-autoplay = "idle_anim"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_oypmj")
-}
 tree_root = SubResource("AnimationNodeStateMachine_ia41g")
 anim_player = NodePath("../AnimationPlayer")
 script = ExtResource("8_rdtdl")
